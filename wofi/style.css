@@ -1,0 +1,75 @@
+window {
+    margin: 0px;
+    background-color: rgba(40, 42, 54, 0.6);
+    border-radius: 30px;
+    border: 2px solid #00f3df;
+}
+
+#input {
+    margin: 5px;
+    border: none;
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(40, 42, 54, 0.6);
+    border-radius: 30px;
+    outline: none;
+    font-size: 16px;
+}
+
+#inner-box {
+    margin: 5px;
+    border: none;
+    background-color: transparent;
+    border-radius: 30px;
+}
+
+#outer-box {
+    margin: 15px;
+    border: none;
+    background-color: transparent;
+}
+
+#scroll {
+    margin: 0px;
+    border: none;
+    background-color: transparent;
+}
+
+#text {
+    margin: 5px;
+    border: none;
+    color: rgba(255, 115, 1, 1);
+    background-color: transparent;
+}
+
+#entry:selected {
+    background-color: rgba(68, 71, 90, 0.6);
+    border-radius: 20px;
+    outline: none;
+}
+
+#entry:selected * {
+    background-color: transparent;
+    outline: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Asegúrate de ajustar el tamaño de las imágenes */
+listview {
+    height: 600px;
+    /* Ajusta la altura total */
+    max-height: 600px;
+    /* También puedes probar con max-height */
+}
+
+element {
+    height: 200px;
+    /* Ajusta el tamaño de las miniaturas */
+    width: 200px;
+    /* Ajusta el tamaño de las miniaturas */
+}
+
+/* Opcional: ajustar la separación entre elementos */
+element > image {
+    margin: 5px;
+}

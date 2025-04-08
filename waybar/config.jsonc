@@ -1,0 +1,171 @@
+[
+	{
+		"layer": "top",
+		"output": "HDMI-A-2",
+		"position": "top",
+		"height": 30,
+		"width": 1890,
+		"spacing": 5,
+		"margin-right": 8,
+		"margin-bottom": -2,
+		"margin-left": 8,
+		"modules-left": ["custom/wofi", "hyprland/workspaces", "hyprland/window"],
+
+		"modules-center": ["clock#time"],
+
+		"modules-right": ["pulseaudio", "custom/notification"],
+
+		"hyprland/workspaces": {
+			"disable-scroll": true,
+			"active-only": false,
+			"warp-on-scroll": false,
+			"format": "{icon} {id}",
+			"format-icons": {
+                "6": "<span color='#458588' >◆</span>",
+                "7": "<span color='#7e7eaa' >◆</span>",
+				"8": "<span color='#458588' >◆</span>",
+				"9": "<span color='#7f80aa' >◆</span>",
+				"10": "<span color='#458588' >◆</span>",
+				"default": "<span color='#7e7eaa'>◆</span>"
+			}
+			// "persistent-workspaces": {
+			//     "*": 1
+			// }
+		},
+		"custom/wofi": {
+			"format": "Manu",
+			"on-click": "pkill wofi || wofi --show drun",
+			"escape": true,
+			"tooltip": false
+		},
+
+		"hyprland/window": {
+			"format": "{class}",
+			"max-length": 20,
+			"rewrite": {
+				"": "<span foreground= '#458588'></span> hyprland",
+				"~": " terminal",
+				"com.mitchellh.ghostty": ">> ghostty",
+				"zen-beta": ">> zen"
+			}
+		},
+
+		"pulseaudio": {
+			// "scroll-step": 1, // %, can be a float
+			"format": "{icon}  {volume}% ",
+			"format-icons": {
+				"default": [" ", " ", " "]
+			},
+			"on-click": "pavucontrol"
+		},
+
+		"clock#time": {
+			"format": "<span color='#cc241d' ></span>{:%I:%M %p - %a %d %b}",
+			"tooltip": false,
+			"min-length": 8,
+			"max-length": 30
+		},
+
+		"custom/paddc": {
+			"format": " ",
+			"tooltip": false
+		},
+
+		"mpris": {
+			"format": "<span color='#cc241d'></span>  {artist} - {title}  ",
+			"max-length": 40,
+            "max-width":30
+		},
+
+		"custom/notification": {
+			"tooltip": false,
+			"rotate": 0,
+			"format": "{icon}",
+			"format-icons": {
+				"notification": "󰅸 ",
+				"none": "󰂜 ",
+				"dnd-notification": "󰅸 ",
+				"dnd-none": "󱏨 ",
+				"inhibited-notification": "󰅸 ",
+				"inhibited-none": "󰂜 ",
+				"dnd-inhibited-notification": "󰅸 ",
+				"dnd-inhibited-none": "󱏨 "
+			},
+			"return-type": "json",
+			"exec-if": "which swaync-client",
+			"exec": "swaync-client -swb",
+			"on-click-right": "swaync-client -d -sw",
+			"on-click": "swaync-client -t -sw",
+			"escape": true
+		}
+	},
+	{
+		"layer": "top",
+		"output": "HDMI-A-1",
+		"position": "top",
+		"height": 30,
+		"width": 1890,
+		"spacing": 5,
+		"margin-right": 8,
+		"margin-bottom": -2,
+		"margin-left": 8,
+		"modules-left": ["custom/wofi", "hyprland/workspaces", "hyprland/window"],
+
+		"modules-center": ["mpris", "clock#time"],
+
+		"modules-right": ["cpu", "memory"],
+
+		"hyprland/workspaces": {
+			"disable-scroll": true,
+			"active-only": false,
+			"warp-on-scroll": false,
+			"format": "{icon} {id}",
+			"format-icons": {
+				 "1": "<span color='#458588' >◆</span>",
+                "2": "<span color='#7e7eaa' >◆</span>",
+				"3": "<span color='#458588' >◆</span>",
+				"4": "<span color='#7f80aa' >◆</span>",
+				"5": "<span color='#458588' >◆</span>",
+				"default": "<span color='#7e7eaa'>◆</span>"
+			}
+			// "persistent-workspaces": {
+			//     "*": 1
+			// }
+		},
+
+		"hyprland/window": {
+			"format": "{class}",
+			"max-length": 20,
+			"rewrite": {
+				"": "<span foreground= '#458588'></span> hyprland",
+				"~": " terminal",
+				"com.mitchellh.ghostty": ">> ghostty",
+				"zen-beta": ">> zen"
+			}
+		},
+
+		"clock#time": {
+			"format": "<span color='#cc241d' ></span>{:%I:%M %p - %a %d %b}",
+			"tooltip": false,
+			"min-length": 8,
+			"max-length": 30
+		},
+
+		"custom/paddc": {
+			"format": " ",
+			"tooltip": false
+		},
+
+		"mpris": {
+			"format": "<span color='#cc241d'></span>  {artist} - {title}  ",
+			"max-length": 40
+		},
+		"cpu": {
+			"format": "{usage}% ",
+			"tooltip": false
+		},
+		"memory": {
+			"format": "{}% "
+		}
+	}
+]
