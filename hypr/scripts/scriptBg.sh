@@ -16,7 +16,7 @@ if [ -z "$SELECTED_MONITOR" ]; then
 fi
 
 # Selección de fondo de pantalla
-SELECTED_WALL=$(for a in ${WallDir}*.jpg; do echo -en "$a\0icon\x1f$a\n"; done | PREVIEW=true \
+SELECTED_WALL=$(for a in ${WallDir}*.{jpg,png}; do echo -en "$a\0icon\x1f$a\n"; done | PREVIEW=true \
     rofi -no-config -theme fullscreen-preview.rasi -show -dmenu)
 
 # Si no se seleccionó un fondo de pantalla, salir
